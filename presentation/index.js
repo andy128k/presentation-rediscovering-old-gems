@@ -16,20 +16,20 @@ import {
   List,
   Quote,
   Slide,
-  Text
+  Text,
+  CodePane
 } from "spectacle";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
 // Import theme
-// import createTheme from "spectacle/lib/themes/default";
-import theme from "../themes/seattlejs/index.js";
+import createTheme from "spectacle/lib/themes/default";
 
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
-require("../themes/seattlejs/index.css");
+// require("../themes/seattlejs/index.css");
 // Best way to include fonts rite
 require("../fonts/worksans.css");
 require("../fonts/biorhyme.css");
@@ -37,6 +37,7 @@ require("../fonts/silkscreen.css");
 
 const images = {
   bg: require("../assets/bg_skyline.svg"),
+  logoJS: require("../assets/UniversalJS.svg"),
   logo: require("../assets/logo-seattlejsconference.svg"),
   logoAlexa: require("../assets/logo-alexa.svg"),
   logoImdb: require("../assets/logo-IMDb.svg"),
@@ -56,7 +57,79 @@ const images = {
   logoUnbounce: require("../assets/logo-unbounce.png")
 };
 
+const plan = `
+CoffeeScript 2010
+influenced by Ruby, Python
+
+
+ES2015 (ES6)
+
+
+three categories: stdlib (polyfills), syntax (babel), language ( :( proxy ))
+
+
+
+Symbol
+
+Const, let
+
+arrow functions
+
+default params, rest/spread params
+
+{prop}, {[calc]: val}, {method() {}}
+
+const {value} = obj, const [item, ...rest] = arr
+
+modules
+
+class, methods, static methods, getter/setter
+
+class as expression: return class {}, class extends func(base1, base2) {}
+
+Map, Set
+
+iterators (for-of), generators
+
+Promise
+
+Proxy/Reflection
+
+various new built-in methods...
+
+
+ES2016 (ES7)
+
+power operator
+
+
+ES2017
+
+async
+
+
+
+NEXT
+
+object rest/spread
+class properties
+`;
+
 preloader(images);
+
+const slide2 = () => (
+  <Slide>
+    <CodePane textSize={"100%"} lang="javascript" source={"import 'react'\nconsole.log('awesome!')"}/>
+  </Slide>
+);
+
+const theme = createTheme({
+  primary: "#006bff",
+  secondary: "#2e2e2c"
+}, {
+  primary: "sans-serif",
+  secondary: "sans-serif"
+});
 
 export default class Presentation extends React.Component {
   renderSponsorHeading(text) {
@@ -123,21 +196,25 @@ export default class Presentation extends React.Component {
     return (
       <Deck
         autoplay
-        progress="none"
+        progress="bar"
         theme={theme}
-        transition={["fade"]}
+        transition={["fade", "slide"]}
         transitionDuration={500}
       >
-        <Slide style={skylineBg}>
-          <Image width="100%" src={images.logo} />
+        <Slide>
+          <Heading caps>
+            Rediscovering old gems
+          </Heading>
+          <Image width="25%" src={images.logoJS} />
           <Text textFont="monospace" margin="auto auto 5em auto">
-            10-11 August 2017
+            28 August 2017
           </Text>
         </Slide>
-        {wifiSlide}
-        <Slide bgColor="white">
-          {this.renderSponsorHeading("Presenting Sponsor")}
-          <Image width="90%" src={images.logoFormidable} />
+        {slide2()}
+        <Slide>
+          <CodePane>
+            {plan}
+          </CodePane>
         </Slide>
         <Slide bgColor="white">
           {this.renderSponsorHeading("Diamond Sponsor")}
