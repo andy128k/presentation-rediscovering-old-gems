@@ -35,27 +35,25 @@ require("../fonts/worksans.css");
 require("../fonts/biorhyme.css");
 require("../fonts/silkscreen.css");
 
-const images = {
-  bg: require("../assets/bg_skyline.svg"),
-  logoJS: require("../assets/UniversalJS.svg"),
-  logo: require("../assets/logo-seattlejsconference.svg"),
-  logoAlexa: require("../assets/logo-alexa.svg"),
-  logoImdb: require("../assets/logo-IMDb.svg"),
-  logoFormidable: require("../assets/logo-formidable.svg"),
-  logoMicrosoft: require("../assets/logo-microsoft.svg"),
-  logoZillow: require("../assets/logo-zillow.svg"),
-  logoGalvanize: require("../assets/logo-galvanize.svg"),
-  logoAppSheet: require("../assets/logo-appsheet.svg"),
-  logoGoDaddy: require("../assets/logo-godaddy.svg"),
-  logoNpm: require("../assets/logo-npm.svg"),
-  logoSitepen: require("../assets/logo-sitepen.svg"),
-  logoIndeed: require("../assets/logo-indeed.png"),
-  logoOpenDoor: require("../assets/logo-opendoor.svg"),
-  logoSheCodesNow: require("../assets/logo-shecodesnow.png"),
-  logoSendGrid: require("../assets/logo-sendgrid.svg"),
-  logoTwitter: require("../assets/logo-twitter.svg"),
-  logoUnbounce: require("../assets/logo-unbounce.png")
-};
+const bg = require("../assets/bg_skyline.svg");
+const logoJS = require("../assets/UniversalJS.svg");
+const logo = require("../assets/logo-seattlejsconference.svg");
+const logoAlexa = require("../assets/logo-alexa.svg");
+const logoImdb = require("../assets/logo-IMDb.svg");
+const logoFormidable = require("../assets/logo-formidable.svg");
+const logoMicrosoft = require("../assets/logo-microsoft.svg");
+const logoZillow = require("../assets/logo-zillow.svg");
+const logoGalvanize = require("../assets/logo-galvanize.svg");
+const logoAppSheet = require("../assets/logo-appsheet.svg");
+const logoGoDaddy = require("../assets/logo-godaddy.svg");
+const logoNpm = require("../assets/logo-npm.svg");
+const logoSitepen = require("../assets/logo-sitepen.svg");
+const logoIndeed = require("../assets/logo-indeed.png");
+const logoOpenDoor = require("../assets/logo-opendoor.svg");
+const logoSheCodesNow = require("../assets/logo-shecodesnow.png");
+const logoSendGrid = require("../assets/logo-sendgrid.svg");
+const logoTwitter = require("../assets/logo-twitter.svg");
+const logoUnbounce = require("../assets/logo-unbounce.png");
 
 const plan = `
 CoffeeScript 2010
@@ -115,6 +113,27 @@ object rest/spread
 class properties
 `;
 
+const images = {
+  bg,
+  logoJS,
+  logo,
+  logoAlexa,
+  logoImdb,
+  logoFormidable,
+  logoMicrosoft,
+  logoZillow,
+  logoGalvanize,
+  logoAppSheet,
+  logoGoDaddy,
+  logoNpm,
+  logoSitepen,
+  logoIndeed,
+  logoOpenDoor,
+  logoSheCodesNow,
+  logoSendGrid,
+  logoTwitter,
+  logoUnbounce
+};
 preloader(images);
 
 const slide2 = () => (
@@ -124,7 +143,8 @@ const slide2 = () => (
 );
 
 const theme = createTheme({
-  primary: "#006bff",
+  // primary: "#006bff",
+  primary: "#678",
   secondary: "#2e2e2c"
 }, {
   primary: "sans-serif",
@@ -146,7 +166,7 @@ export default class Presentation extends React.Component {
 
   render() {
     const skylineBg = {
-      backgroundImage: `url(${images.bg})`,
+      backgroundImage: `url(${bg})`,
       backgroundRepeat: "no-repeat",
       backgroundPosition: "bottom center",
       backgroundSize: "105% auto"
@@ -174,7 +194,7 @@ export default class Presentation extends React.Component {
           <Link href="https://twitter.com/seattlejs">
             <Image
               height="1.5em"
-              src={images.logoTwitter}
+              src={logoTwitter}
               style={{ verticalAlign: "middle" }}
             />
             @SeattleJS
@@ -184,7 +204,7 @@ export default class Presentation extends React.Component {
           <Link href="https://twitter.com/hashtag/SeattleJSConf?src=hash">
             <Image
               height="1.5em"
-              src={images.logoTwitter}
+              src={logoTwitter}
               style={{ verticalAlign: "middle" }}
             />
             #SeattleJSConf
@@ -195,17 +215,15 @@ export default class Presentation extends React.Component {
 
     return (
       <Deck
-        autoplay
         progress="bar"
         theme={theme}
         transition={["fade", "slide"]}
-        transitionDuration={500}
       >
         <Slide>
           <Heading caps>
             Rediscovering old gems
           </Heading>
-          <Image width="25%" src={images.logoJS} />
+          <Image width="25%" src={logoJS} />
           <Text textFont="monospace" margin="auto auto 5em auto">
             28 August 2017
           </Text>
@@ -218,27 +236,27 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="white">
           {this.renderSponsorHeading("Diamond Sponsor")}
-          <Image width="90%" src={images.logoMicrosoft} />
+          <Image width="90%" src={logoMicrosoft} />
         </Slide>
         <Slide bgColor="white">
           {this.renderSponsorHeading("Platinum Sponsor")}
-          <Image width="90%" src={images.logoAlexa} />
+          <Image width="90%" src={logoAlexa} />
         </Slide>
         <Slide bgColor="white">
           {this.renderSponsorHeading("Gold Sponsor")}
-          <Image width="50%" src={images.logoImdb} />
+          <Image width="50%" src={logoImdb} />
         </Slide>
         {wifiSlide}
         <Slide bgColor="white">
           {this.renderSponsorHeading("Silver Sponsors")}
           <Layout>
             <Fill>
-              <Image style={sponsor} width="90%" src={images.logoZillow} />
-              <Image style={sponsor} width="90%" src={images.logoGalvanize} />
+              <Image style={sponsor} width="90%" src={logoZillow} />
+              <Image style={sponsor} width="90%" src={logoGalvanize} />
             </Fill>
             <Fill>
-              <Image style={sponsor} width="90%" src={images.logoAppSheet} />
-              <Image style={sponsor} width="90%" src={images.logoGoDaddy} />
+              <Image style={sponsor} width="90%" src={logoAppSheet} />
+              <Image style={sponsor} width="90%" src={logoGoDaddy} />
             </Fill>
           </Layout>
         </Slide>
@@ -246,30 +264,30 @@ export default class Presentation extends React.Component {
           {this.renderSponsorHeading("Community Sponsors")}
           <Layout style={{ alignItems: "center" }}>
             <Fill>
-              <Image style={sponsor} width="60%" src={images.logoNpm} />
+              <Image style={sponsor} width="60%" src={logoNpm} />
             </Fill>
             <Fill>
-              <Image style={sponsor} width="95%" src={images.logoSendGrid} />
+              <Image style={sponsor} width="95%" src={logoSendGrid} />
             </Fill>
             <Fill>
-              <Image style={sponsor} width="75%" src={images.logoIndeed} />
+              <Image style={sponsor} width="75%" src={logoIndeed} />
             </Fill>
           </Layout>
           <Layout style={{ alignItems: "center" }}>
             <Fill>
-              <Image style={sponsor} width="80%" src={images.logoSitepen} />
+              <Image style={sponsor} width="80%" src={logoSitepen} />
             </Fill>
             <Fill>
-              <Image style={sponsor} width="90%" src={images.logoOpenDoor} />
+              <Image style={sponsor} width="90%" src={logoOpenDoor} />
             </Fill>
             <Fill>
-              <Image style={sponsor} width="60%" src={images.logoSheCodesNow} />
+              <Image style={sponsor} width="60%" src={logoSheCodesNow} />
             </Fill>
           </Layout>
           <Layout>
             <Fill />
             <Fill>
-              <Image style={sponsor} width="80%" src={images.logoUnbounce} />
+              <Image style={sponsor} width="80%" src={logoUnbounce} />
             </Fill>
             <Fill />
           </Layout>
