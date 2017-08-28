@@ -1,0 +1,27 @@
+// object deconstruction
+const {x, y} = {x: 10, y: 20};
+console.log(x);                                   // 10
+console.log(y);                                   // 20
+
+// array rest operator
+const [head, ...tail] = [1, 2, 3];
+console.log(head);                                // 1
+console.log(tail);                                // [2, 3]
+
+// array spread operator
+console.log([...tail, head]);                     // [2, 3, 1]
+
+// array rest operator
+let [first, ...rest, last] = [1, 2, 3, 4, 5];
+console.log(first);                               // 1
+console.log(rest);                                // [2, 3, 4]
+console.log(last);                                // 5
+
+// arrow function
+const add = (x, y) => x + y;
+
+// default arguments
+function reducer(state = initialState, action) { /* ... */ }
+
+// arguments rest/spread
+const rot = f => (arg0, ...args) => f(...args, arg0);

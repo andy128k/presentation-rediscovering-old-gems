@@ -1,0 +1,20 @@
+let x = 12, y = 25;
+// shorthand object literal
+let point = {x, y};
+console.log(point);               // { x: 12, y: 25 }
+
+let key = 'what';
+// calculated key
+let obj = {
+  [key]: 'value',
+};
+console.log(obj);                 // { 'what': 'value' }
+
+let point_with_method = {
+  x: 14,
+  y: 29,
+  print_me() {                    // print_me: function () {
+    console.log('point', x, y);
+  }
+};
+point_with_method.print_me();

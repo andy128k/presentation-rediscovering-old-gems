@@ -1,7 +1,5 @@
-// Import React
 import React from "react";
-
-// Import Spectacle Core tags
+import createTheme from "spectacle/lib/themes/default";
 import {
   BlockQuote,
   Cite,
@@ -22,18 +20,23 @@ import {
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
+import slideCoffeeScript from "./coffeescript";
+import {slideES2015_1, slideES2015_2} from "./es2015";
 
 // Import theme
-import createTheme from "spectacle/lib/themes/default";
+const theme = createTheme({
+  primary: "#678",
+  secondary: "#def"
+});
 
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
-// require("../themes/seattlejs/index.css");
+// require("../themes/formidable/index.css");
 // Best way to include fonts rite
-require("../fonts/worksans.css");
-require("../fonts/biorhyme.css");
-require("../fonts/silkscreen.css");
+// require("../fonts/worksans.css");
+// require("../fonts/biorhyme.css");
+// require("../fonts/silkscreen.css");
 
 const bg = require("../assets/bg_skyline.svg");
 const logoJS = require("../assets/UniversalJS.svg");
@@ -55,47 +58,7 @@ const logoSendGrid = require("../assets/logo-sendgrid.svg");
 const logoTwitter = require("../assets/logo-twitter.svg");
 const logoUnbounce = require("../assets/logo-unbounce.png");
 
-const plan = `
-CoffeeScript 2010
-influenced by Ruby, Python
-
-
-ES2015 (ES6)
-
-
-three categories: stdlib (polyfills), syntax (babel), language ( :( proxy ))
-
-
-
-Symbol
-
-Const, let
-
-arrow functions
-
-default params, rest/spread params
-
-{prop}, {[calc]: val}, {method() {}}
-
-const {value} = obj, const [item, ...rest] = arr
-
-modules
-
-class, methods, static methods, getter/setter
-
-class as expression: return class {}, class extends func(base1, base2) {}
-
-Map, Set
-
-iterators (for-of), generators
-
-Promise
-
-Proxy/Reflection
-
-various new built-in methods...
-
-
+const plan2 = `
 ES2016 (ES7)
 
 power operator
@@ -111,6 +74,16 @@ NEXT
 
 object rest/spread
 class properties
+
+
+
+
+
+
+REACT / ELM
+
+2011 - born, 2013 - published
+
 `;
 
 const images = {
@@ -141,15 +114,6 @@ const slide2 = () => (
     <CodePane textSize={"100%"} lang="javascript" source={"import 'react'\nconsole.log('awesome!')"}/>
   </Slide>
 );
-
-const theme = createTheme({
-  // primary: "#006bff",
-  primary: "#678",
-  secondary: "#2e2e2c"
-}, {
-  primary: "sans-serif",
-  secondary: "sans-serif"
-});
 
 export default class Presentation extends React.Component {
   renderSponsorHeading(text) {
@@ -228,10 +192,31 @@ export default class Presentation extends React.Component {
             28 August 2017
           </Text>
         </Slide>
+        <Slide>
+          <Heading size={2}>Genesis</Heading>
+          <List>
+            <ListItem>Was created in 10 days in May 1995</ListItem>
+            <ListItem>Influenced by Scheme</ListItem>
+            <ListItem>OOP model is borrowed from Self</ListItem>
+            <ListItem>Syntax is C/Java-like</ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={2}>Adolescence</Heading>
+          <Text>(jQuery epoch)</Text>
+          <List>
+            <ListItem>Used to enrich HTML pages</ListItem>
+            <ListItem>Unobtrusive JavaScript</ListItem>
+            <ListItem>Spaghetti code</ListItem>
+          </List>
+        </Slide>
+        {slideCoffeeScript()}
+        {slideES2015_1()}
+        {slideES2015_2()}
         {slide2()}
         <Slide>
           <CodePane>
-            {plan}
+            {plan2}
           </CodePane>
         </Slide>
         <Slide bgColor="white">
