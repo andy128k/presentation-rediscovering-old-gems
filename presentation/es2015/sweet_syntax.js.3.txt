@@ -1,0 +1,28 @@
+// iterators/iterables
+const infinite_iterable = {
+  [Symbol.iterator]() {
+    return {
+      i: 0,
+      next() {
+        return {value: ++this.i, done: false};
+      }
+    };
+  }
+};
+
+for (let value of infinite_iterable) {
+  console.log(value);
+}
+// 1, 2, 3 ...
+
+// generators
+function* primes() {
+  yield 2;
+  yield 3;
+  yield 5;
+}
+
+for (let value of primes()) {
+  console.log(value);
+}
+// 2, 3, 5

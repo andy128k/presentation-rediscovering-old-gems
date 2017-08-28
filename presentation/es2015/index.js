@@ -19,33 +19,9 @@ import {
 
 import sweet_syntax_1 from "raw-loader!./sweet_syntax.js.1.txt";
 import sweet_syntax_2 from "raw-loader!./sweet_syntax.js.2.txt";
-
-const plan1 = `
-three categories: stdlib (polyfills), syntax (babel), language ( :( proxy ))
-
-
-
-Symbol
-
-{prop}, {[calc]: val}, {method() {}}
-
-modules
-
-class, methods, static methods, getter/setter
-
-class as expression: return class {}, class extends func(base1, base2) {}
-
-Map, Set
-
-iterators (for-of), generators
-
-Promise
-
-Proxy/Reflection
-
-various new built-in methods...
-`;
-
+import sweet_syntax_3 from "raw-loader!./sweet_syntax.js.3.txt";
+import sweet_syntax_4 from "raw-loader!./sweet_syntax.js.4.txt";
+import sweet_syntax_5 from "raw-loader!./sweet_syntax.js.5.txt";
 
 export const slideES2015_1 = () => (
   <Slide>
@@ -66,9 +42,36 @@ export const slideES2015_2 = () => (
 export const slideES2015_3 = () => (
   <Slide>
     <Heading size={2}>EcmaScript&nbsp;2015</Heading>
+    <Heading size={6}>Sweet syntax</Heading>
+    <CodePane textSize={"50%"} lang="javascript" source={sweet_syntax_3} />
+  </Slide>
+);
+
+export const slideES2015_4 = () => (
+  <Slide>
+    <Heading size={2}>EcmaScript&nbsp;2015</Heading>
+    <Heading size={6}>Sweet syntax</Heading>
+    <CodePane textSize={"40%"} lang="javascript" source={sweet_syntax_4} />
+  </Slide>
+);
+
+export const slideES2015_5 = () => (
+  <Slide>
+    <Heading size={2}>EcmaScript&nbsp;2015</Heading>
+    <Heading size={6}>Sweet syntax</Heading>
+    <CodePane textSize={"50%"} lang="javascript" source={sweet_syntax_5} />
+  </Slide>
+);
+
+export const slideES2015_6 = () => (
+  <Slide>
+    <Heading size={2}>EcmaScript&nbsp;2015</Heading>
     <List>
-      <ListItem>Symbol type</ListItem>
-      <ListItem>Symbol type</ListItem>
+      <ListItem>Modules</ListItem>
+      <ListItem>New types: Symbol, Set, Map, WeakMap...</ListItem>
+      <ListItem>Proxy</ListItem>
+      <ListItem>Various new built-in methods</ListItem>
+      <ListItem>...</ListItem>
     </List>
   </Slide>
 );

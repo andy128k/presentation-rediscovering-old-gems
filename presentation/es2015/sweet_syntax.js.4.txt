@@ -1,0 +1,30 @@
+class Shape {}
+
+class Square extends Shape {
+  constructor(width) {
+    super();
+    this.width = width;
+  }
+
+  perimeter() {
+    return 4 * this.width;
+  }
+
+  get area {
+    return this.width * this.width;
+  }
+
+  set area(area) {
+    this.width = Math.sqrt(area);
+  }
+}
+
+let square = new Square(5);
+square.area = 36;
+console.log(square.area); // 6
+
+function newClass() {
+  return class extends func(BaseClass, Mixin1, Mixin2) {
+    // ...
+  }
+}
