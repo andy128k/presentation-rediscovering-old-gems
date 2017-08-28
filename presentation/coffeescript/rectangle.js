@@ -16,5 +16,4 @@ Rectangle.prototype.perimeter = function() {
 };
 
 var rect = new Rectangle(1, 2);
-
 console.log(rect.perimeter());

@@ -27,7 +27,7 @@ export const slideES2015_1 = () => (
   <Slide>
     <Heading size={2}>EcmaScript&nbsp;2015</Heading>
     <Heading size={6}>Sweet syntax</Heading>
-    <CodePane textSize={"40%"} lang="javascript" source={sweet_syntax_1} />
+    <CodePane textSize={"35%"} lang="javascript" source={sweet_syntax_1} />
   </Slide>
 );
 
@@ -35,7 +35,7 @@ export const slideES2015_2 = () => (
   <Slide>
     <Heading size={2}>EcmaScript&nbsp;2015</Heading>
     <Heading size={6}>Sweet syntax</Heading>
-    <CodePane textSize={"50%"} lang="javascript" source={sweet_syntax_2} />
+    <CodePane textSize={"45%"} lang="javascript" source={sweet_syntax_2} />
   </Slide>
 );
 
@@ -43,7 +43,7 @@ export const slideES2015_3 = () => (
   <Slide>
     <Heading size={2}>EcmaScript&nbsp;2015</Heading>
     <Heading size={6}>Sweet syntax</Heading>
-    <CodePane textSize={"50%"} lang="javascript" source={sweet_syntax_3} />
+    <CodePane textSize={"45%"} lang="javascript" source={sweet_syntax_3} />
   </Slide>
 );
 
@@ -51,7 +51,7 @@ export const slideES2015_4 = () => (
   <Slide>
     <Heading size={2}>EcmaScript&nbsp;2015</Heading>
     <Heading size={6}>Sweet syntax</Heading>
-    <CodePane textSize={"40%"} lang="javascript" source={sweet_syntax_4} />
+    <CodePane textSize={"35%"} lang="javascript" source={sweet_syntax_4} />
   </Slide>
 );
 

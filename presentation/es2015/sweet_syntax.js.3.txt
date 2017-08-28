@@ -9,11 +9,7 @@ const infinite_iterable = {
     };
   }
 };
-
-for (let value of infinite_iterable) {
-  console.log(value);
-}
-// 1, 2, 3 ...
+for (let value of infinite_iterable) {} // 1, 2, 3 ...
 
 // generators
 function* primes() {
@@ -21,8 +17,4 @@ function* primes() {
   yield 3;
   yield 5;
 }
-
-for (let value of primes()) {
-  console.log(value);
-}
-// 2, 3, 5
+for (let value of primes()) {} // 2, 3, 5

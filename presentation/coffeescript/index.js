@@ -25,7 +25,7 @@ export default () => (
       </Fit>
       <Fill>
         <Heading size={6}>JavaScript (ES5)</Heading>
-        <CodePane textSize={"50%"} lang="javascript" source={jsCode} />
+        <CodePane textSize={"40%"} lang="javascript" source={jsCode} />
       </Fill>
     </Layout>
   </Slide>

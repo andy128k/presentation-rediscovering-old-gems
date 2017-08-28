@@ -5,15 +5,12 @@ class Square extends Shape {
     super();
     this.width = width;
   }
-
   perimeter() {
     return 4 * this.width;
   }
-
   get area {
     return this.width * this.width;
   }
-
   set area(area) {
     this.width = Math.sqrt(area);
   }
